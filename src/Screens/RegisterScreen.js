@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import {
 	Container,
@@ -17,13 +17,16 @@ import {
 } from 'native-base'
 // import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export default class RegisterScreen extends Component {
-	render() {
+export default ({ navigation }) => {
+
+    const [Email, setEmail] = useState(navigation.getParam('email'))
+    
+	
 		return (
 			<>
 				<Header style={{ backgroundColor: '#0064d2' }}>
 					<Left>
-						<Button transparent onPress={() => this.props.navigation.navigate("Login")}>
+						<Button transparent onPress={() => navigation.navigate("Login")}>
 							<Icon name='arrow-back' />
 						</Button>
 					</Left>
@@ -42,9 +45,11 @@ export default class RegisterScreen extends Component {
 					</Text>
 				</View>
 				<Item regular style={styles.form}>
-					<Input placeholder='Email' />
+                    <Input placeholder='Email' 
+                    autoCapitalize='none'
+                    onChangeText={text => setEmail(text)}/>
 				</Item>
-				<TouchableOpacity onPress={() => this.props.navigation.navigate("SetPassword")}>
+				<TouchableOpacity onPress={() => navigation.navigate("SetRegister", {email: Email})}>
 					<Button rounded style={styles.buttonlogin}>
 						<Text style={{ fontSize: 18 }}>NEXT</Text>
 					</Button>
@@ -97,7 +102,6 @@ export default class RegisterScreen extends Component {
 			</>
 		)
 	}
-}
 
 const styles = StyleSheet.create({
 	welcome: {

@@ -8,6 +8,8 @@ import RegisterScreen from './src/Screens/RegisterScreen';
 import SetPasswordScreen from './src/Screens/SetPasswordScreen';
 import SetRegisterScreen from './src/Screens/SetRegisterScreen';
 import WelcomeScreen from './src/Screens/WelcomeScreen';
+import HomeScreen from './src/Screens/HomeScreen';
+
 
 const UserNavigator = createStackNavigator({
   Login: {
@@ -42,9 +44,20 @@ const UserNavigator = createStackNavigator({
   },
 })
 
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions:({
+      backgroundColor: '#0064d2',
+      header: null
+    })
+  }
+}
+)
 
 const switchScreen = createSwitchNavigator({
-  AuthScreen: UserNavigator
+  AuthScreen: UserNavigator,
+  App: AppNavigator
 })
 
 const AppContainer = createAppContainer(switchScreen);

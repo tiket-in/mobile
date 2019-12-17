@@ -9,6 +9,15 @@ import SetPasswordScreen from './src/Screens/SetPasswordScreen';
 import SetRegisterScreen from './src/Screens/SetRegisterScreen';
 import WelcomeScreen from './src/Screens/WelcomeScreen';
 import HomeScreen from './src/Screens/HomeScreen';
+import MyOrderScreen from './src/Components/MyOrder';
+import TixPointScreen from './src/Components/TixPoint';
+import AccountScreen from './src/Components/Account';
+import FormSearchPesawatScreen from './src/Screens/FormSearchPesawat';
+import FormSearchHotelScreen from './src/Screens/FormSearchHotel';
+import FormSearchMobilScreen from './src/Screens/FormSearchSearchMobil';
+import FormSearchKeretaApiScreen from './src/Screens/FormSearchKeretaApi';
+import FormSearchEventScreen from './src/Screens/FormSearchEvent';
+import FormSearchAtraksiScreen from './src/Screens/FormSearchAtraksi';
 
 
 const UserNavigator = createStackNavigator({
@@ -51,13 +60,69 @@ const AppNavigator = createStackNavigator({
       backgroundColor: '#0064d2',
       header: null
     })
-  }
+  },
+  FormSearchPesawat: {
+    screen: FormSearchPesawatScreen,
+    navigationOptions:({
+      backgroundColor: '#0064d2',
+      header: null
+    })
+  },
+  FormSearchHotel: {
+    screen: FormSearchHotelScreen,
+    navigationOptions:({
+      backgroundColor: '#0064d2',
+      header: null
+    })
+  },
+  FormSearchMobil: {
+    screen: FormSearchMobilScreen,
+    navigationOptions:({
+      backgroundColor: '#0064d2',
+      header: null
+    })
+  },
+  FormSearchKeretaApi: {
+    screen: FormSearchKeretaApiScreen,
+    navigationOptions:({
+      backgroundColor: '#0064d2',
+      header: null
+    })
+  },
+  FormSearchEvent: {
+    screen: FormSearchEventScreen,
+    navigationOptions:({
+      backgroundColor: '#0064d2',
+      header: null
+    })
+  },
+  FormSearchAtraksi: {
+    screen: FormSearchAtraksiScreen,
+    navigationOptions:({
+      backgroundColor: '#0064d2',
+      header: null
+    })
+  },
 }
 )
+AppNavigator.navigationOptions = ({navigation}) => {
+  let tabBarVisible = navigation.state.index === 0;
+
+  return {
+    tabBarVisible
+  };
+}
+
+const TabNavigator = createBottomTabNavigator({
+  Home: HomeScreen,
+  MyOrder: MyOrderScreen,
+  TIXPoint: TixPointScreen,
+  Account: AccountScreen
+})
 
 const switchScreen = createSwitchNavigator({
   AuthScreen: UserNavigator,
-  App: AppNavigator
+  App: TabNavigator
 })
 
 const AppContainer = createAppContainer(switchScreen);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {
-    
+    H3,
     Container,
 	Header,
 	Left,
@@ -19,6 +19,7 @@ import {
 } from 'native-base'
 import colors from '../Theme/colors';
 import { SliderBox } from 'react-native-image-slider-box'
+import TicketCard from '../Components/TicketCard'
 
 export default class HomeScreen extends Component {
     constructor(props) {
@@ -45,7 +46,6 @@ export default class HomeScreen extends Component {
             </Left>	
                 <Text style={{color: 'white', marginTop: 20, textAlign: 'right', marginRight: -150}}>1.000</Text>
 			</Header>
-            {/* <View style={styles.carouselWrapper}> */}
                 <SliderBox
                     images={this.state.images}
                     sliderBoxHeight={300}
@@ -58,7 +58,62 @@ export default class HomeScreen extends Component {
                     resizeMethod={'resize'}
     
                 />
-            {/* </View> */}
+            <Container style={styles.contentWrapper}>
+                    <View style={{ paddingHorizontal: 15, marginTop: 10 }}>
+                        <H3 style={styles.welcomeText}>
+                            Hey kamu, mau kemana?
+                        </H3>
+                    </View>
+                    <View style={styles.ticketCardWrapper}>
+                        <TicketCard
+                            text="Pesawat"
+                            source={require('../Assets/iconplane.png')}
+                        
+                            // onPress={() => {
+                            //     navigation.navigate('FormSearchPesawat')
+                            // }}
+                            />
+                        <TicketCard
+                            text="Hotel"
+                            source={require('../Assets/iconhotel.png')}
+                            // onPress={() => {
+                            //     // navigation.navigate('FormSearchHotel')
+                            // }}
+                        />
+                        <TicketCard
+                            text="Sewa Mobil"
+                            source={require('../Assets/iconcar.png')}
+                            resizeMode='cover34'
+                            // onPress={() => {
+                            //     navigation.navigate('FormSearchMobil')
+                            // }}
+                        />
+                        <TicketCard
+                            text="Kereta Api"
+                            source={require('../Assets/icontrain.png')}
+                             // onPress={() => {
+                            //     navigation.navigate('FormSearchKeretaApi')
+                            // }}
+                        />
+                          <TicketCard
+                            text="Atraksi"
+                            source={require('../Assets/iconattractions.webp')}
+                             // onPress={() => {
+                            //     navigation.navigate('FormSearchAtraksi')
+                            // }}
+                        />
+                        
+                        <TicketCard
+                            text="Event"
+                            source={require('../Assets/iconentertainment.png')}
+                             // onPress={() => {
+                            //     navigation.navigate('FormSearchEvent')
+                            // }}
+                        />
+                    </View>
+        
+            </Container>
+           
             </View>
         )
     }}
@@ -66,6 +121,17 @@ export default class HomeScreen extends Component {
     const styles = StyleSheet.create({
         carouselWrapper: {
             backgroundColor: '#59637b',
+        },
+        welcomeText: {
+            fontSize: 18
+        },
+        ticketCardWrapper: {
+            flex: 1,
+            flexWrap: 'wrap',
+            flexDirection: 'row',
+            padding: 10,
+            
+            
         }
     })
     

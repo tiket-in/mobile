@@ -45,7 +45,9 @@ export default class RegisterScreen extends Component {
                     </Text>
 				</View>
 				<Item regular style={styles.form}>
-					<Input placeholder='Password' />
+                    <Input placeholder='Password'
+                    secureTextEntry
+                    autoCapitalize='none' />
 				</Item>
                 <Text style={styles.minchar}>
                     Min. 7 characters with combination of numbers, symbol and capital letter

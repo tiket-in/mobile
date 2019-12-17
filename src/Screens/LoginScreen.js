@@ -45,7 +45,9 @@ export default class LoginScreen extends Component {
 					<Input placeholder='Email' />
 				</Item>
 				<Item regular style={styles.form}>
-					<Input placeholder='Password' />
+                    <Input placeholder='Password'
+                    secureTextEntry
+                    autoCapitalize='none' />
 				</Item>
 				<TouchableOpacity>
 					<Text style={styles.forgot}>Forgot your password?</Text>

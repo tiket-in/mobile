@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View} from 'react-native'
+import {View, Image} from 'react-native'
 import {createAppContainer, createSwitchNavigator} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createBottomTabNavigator} from 'react-navigation-tabs';
@@ -118,6 +118,25 @@ const TabNavigator = createBottomTabNavigator({
   MyOrder: MyOrderScreen,
   TIXPoint: TixPointScreen,
   Account: AccountScreen
+},{
+  defaultNavigationOptions: ({ navigation }) => ({
+    tabBarIcon: ({ focused, horizontal, tintColor }) => {
+      const { routeName } = navigation.state;
+      let imageName = require('./src/Assets/home.png');
+       if (routeName === 'MyOrder') {
+        imageName = require('./src/Assets/list.png');
+      }
+        if (routeName === 'TixPoint') {
+          imageName = require('./src/Assets/tickets.png');
+        }
+        if (routeName === 'Account') {
+          imageName = require('./src/Assets/account.png')
+        }
+
+      // You can return any component that you like here!
+      return <Image source={imageName} style={{width:25, resizeMode: 'contain', tintColor}} />;
+    },
+  })
 })
 
 const switchScreen = createSwitchNavigator({

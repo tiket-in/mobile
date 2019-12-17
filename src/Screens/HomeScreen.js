@@ -68,47 +68,45 @@ export default class HomeScreen extends Component {
                         <TicketCard
                             text="Pesawat"
                             source={require('../Assets/iconplane.png')}
-                        
-                            // onPress={() => {
-                            //     navigation.navigate('FormSearchPesawat')
-                            // }}
+                            onPress={() => {
+                                navigation.navigate('FormSearchPesawat')
+                            }}
                             />
                         <TicketCard
                             text="Hotel"
                             source={require('../Assets/iconhotel.png')}
-                            // onPress={() => {
-                            //     // navigation.navigate('FormSearchHotel')
-                            // }}
+                            onPress={() => {
+                                this.props.navigation.navigate('FormSearchHotel')
+                            }}
                         />
                         <TicketCard
                             text="Sewa Mobil"
                             source={require('../Assets/iconcar.png')}
-                            resizeMode='cover34'
-                            // onPress={() => {
-                            //     navigation.navigate('FormSearchMobil')
-                            // }}
+                            onPress={() => {
+                                this.props.navigation.navigate('FormSearchMobil')
+                            }}
                         />
                         <TicketCard
                             text="Kereta Api"
                             source={require('../Assets/icontrain.png')}
-                             // onPress={() => {
-                            //     navigation.navigate('FormSearchKeretaApi')
-                            // }}
+                             onPress={() => {
+                                this.props.navigation.navigate('FormSearchKeretaApi')
+                            }}
                         />
                           <TicketCard
                             text="Atraksi"
                             source={require('../Assets/iconattractions.webp')}
-                             // onPress={() => {
-                            //     navigation.navigate('FormSearchAtraksi')
-                            // }}
+                             onPress={() => {
+                                this.props.navigation.navigate('FormSearchAtraksi')
+                            }}
                         />
                         
                         <TicketCard
                             text="Event"
                             source={require('../Assets/iconentertainment.png')}
-                             // onPress={() => {
-                            //     navigation.navigate('FormSearchEvent')
-                            // }}
+                             onPress={() => {
+                                this.props.navigation.navigate('FormSearchEvent')
+                            }}
                         />
                     </View>
         

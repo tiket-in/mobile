@@ -12,8 +12,8 @@ import HomeScreen from './src/Screens/HomeScreen';
 import MyOrderScreen from './src/Components/MyOrder';
 import TixPointScreen from './src/Components/TixPoint';
 import AccountScreen from './src/Components/Account';
-import FormSearchPesawatScreen from './src/Screens/FormSearchPesawat';
-import FormSearchHotelScreen from './src/Screens/FormSearchHotel';
+import FormSearchPesawat from './src/Screens/FormSearchPesawat';
+import FormSearchHotel from './src/Screens/FormSearchHotel';
 import FormSearchMobilScreen from './src/Screens/FormSearchSearchMobil';
 import FormSearchKeretaApiScreen from './src/Screens/FormSearchKeretaApi';
 import FormSearchEventScreen from './src/Screens/FormSearchEvent';
@@ -62,14 +62,14 @@ const AppNavigator = createStackNavigator({
     })
   },
   FormSearchPesawat: {
-    screen: FormSearchPesawatScreen,
+    screen: FormSearchPesawat,
     navigationOptions:({
       backgroundColor: '#0064d2',
       header: null
     })
   },
   FormSearchHotel: {
-    screen: FormSearchHotelScreen,
+    screen: FormSearchHotel,
     navigationOptions:({
       backgroundColor: '#0064d2',
       header: null
@@ -153,13 +153,14 @@ export default AppContainer;
 // import {View} from 'react-native'
 // import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 // import LoginScreen from './src/Screens/LoginScreen'
-// import RegisterScreen from './src/Screens/RegisterScreen'
+// // import RegisterScreen from './src/Screens/RegisterScreen'
+// import HomeScreen from './src/Screens/HomeScreen';
 
 // export default class App extends Component{
 //   render(){
 //     return(
 //       <View>
-//         <RegisterScreen/>
+//         <HomeScreen />
 //       </View>
 //     )
 //   }

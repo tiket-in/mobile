@@ -93,7 +93,7 @@ export default ({ navigation }) => {
 					</CardItem>
 				</Card>
             <View>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")}>
+                <TouchableOpacity onPress={() => navigation.navigate("Login")}>
                 <Text style={styles.textregister}>
                 Have an account? LOG IN
                 </Text>

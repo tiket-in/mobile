@@ -16,7 +16,7 @@ import {
 	CardItem,
 } from 'native-base'
 
-export default class FormSearchPesawatScreen extends Component {
+export default class FormSearchPesawat extends Component {
     render(){
         return(
         <View>

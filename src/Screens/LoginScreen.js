@@ -111,7 +111,8 @@ export default ({ navigation }) => {
 			<TouchableOpacity>
 				<Text style={styles.forgot}>Forgot your password?</Text>
 			</TouchableOpacity>
-			<TouchableOpacity onPress={onSubmit}>
+			{/* <TouchableOpacity onPress={onSubmit}> */}
+			<TouchableOpacity onPress={() => navigation.navigate('Home')}>
 				<Button rounded style={styles.buttonlogin}>
 					<Text style={{ fontSize: 18 }}>LOG IN</Text>
 				</Button>

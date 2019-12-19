@@ -8,7 +8,7 @@ export default ({ text, source, onPress }) => (
             <View style={styles.ticketCard}>
                 <Thumbnail
                     square
-                    style={{ width: 50, height: 50 }}
+                    style={{ width: 50, height: 50, resizeMode: 'contain' }}
                     source={source}
                 />
                 <Text style={{ fontSize: 12 }}>{text}</Text>
@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     ticketCol: {
         width: '33.3333333333%',
         paddingHorizontal: 10,
-        paddingVertical: 60
+        paddingVertical: 30
     }
 })
